@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arnav Tiwari — Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── DOWNLOAD BAR ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 10px 28px;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 20px;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 3px;
+      transition: background 0.18s;
+    }
+    .dl-btn:hover { background: #444; }
+
+    /* ── PAGE ── */
+    body {
+      background: #d6d6d6;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 10.8pt;
+      color: #000;
+      line-height: 1.45;
+    }
+
+    .resume {
+      max-width: 770px;
+      margin: 62px auto 40px;
+      background: #fff;
+      padding: 48px 54px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ── HEADER ── */
+    .r-name {
+      text-align: center;
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 23pt;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+      margin-bottom: 5px;
+    }
+
+    .r-contact {
+      text-align: center;
+      font-size: 9.8pt;
+      line-height: 1.7;
+    }
+    .r-contact a { color: #000; text-decoration: none; transition: color 0.15s; }
+    .r-contact a:hover { color: #1a56db; text-decoration: underline; }
+    .sep { margin: 0 5px; color: #444; }
+
+    /* ── SECTION ── */
+    .r-section { margin-top: 12px; }
+
+    .r-section-title {
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 11pt;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #000;
+      margin-bottom: 3px;
+      padding-bottom: 2px;
+      border-bottom: 1.4px solid #000;
+    }
+
+    /* ── SUMMARY ── */
+    .summary-body {
+      margin-top: 5px;
+      font-size: 10.5pt;
+      line-height: 1.55;
+    }
+
+    /* ── SKILLS ── */
+    .skills-list { margin-top: 4px; }
+
+    .skill-row {
+      display: flex;
+      gap: 0;
+      line-height: 1.6;
+      font-size: 10.5pt;
+    }
+
+    .skill-label {
+      font-weight: 700;
+      white-space: nowrap;
+      min-width: 136px;
+      flex-shrink: 0;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-block { margin-top: 5px; }
+
+    .two-col {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .bold { font-weight: 700; font-size: 10.8pt; }
+    .italic { font-style: italic; font-size: 10.5pt; }
+    .date { font-size: 10.2pt; white-space: nowrap; flex-shrink: 0; }
+
+    /* ── EXPERIENCE / PROJECT BLOCKS ── */
+    .entry-block { margin-top: 7px; }
+
+    .entry-sub {
+      font-size: 10.5pt;
+      margin-top: 1px;
+      margin-bottom: 3px;
+    }
+
+    /* bullets */
+    .blist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .blist li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 10.5pt;
+      line-height: 1.52;
+      margin-bottom: 2px;
+    }
+    .blist li::before {
+      content: '•';
+      position: absolute;
+      left: 1px;
+      top: 0;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    .ach-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 5px;
+    }
+    .ach-list li {
+      position: relative;
+      padding-left: 13px;
+      font-size: 10.5pt;
+      line-height: 1.52;
+      margin-bottom: 2px;
+    }
+    .ach-list li::before {
+      content: '•';
+      position: absolute;
+      left: 1px;
+      top: 0;
+      font-size: 11pt;
+      line-height: 1.45;
+    }
+
+    /* ── LINK HOVER BLUE ── */
+    a { transition: color 0.15s; }
+    .blist a, .ach-list a, .entry-sub a, .two-col a {
+      color: #000;
+      text-decoration: none;
+    }
+    .blist a:hover, .ach-list a:hover, .entry-sub a:hover,
+    .two-col a:hover, .resume a:hover {
+      color: #1a56db !important;
+      text-decoration: underline;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      .topbar { display: none !important; }
+      body { background: #fff; }
+      .resume { margin: 0; padding: 28px 36px; box-shadow: none; }
+    }
+
+    @media (max-width: 620px) {
+      .resume { padding: 28px 18px; margin-top: 54px; }
+      .two-col { flex-direction: column; gap: 0; }
+      .skill-label { min-width: 110px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="dl-btn" href="Arnav_Tiwari_Resume.pdf" download="Arnav_Tiwari_Resume.pdf">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download PDF
+    </a>
+  </div>
+
+  <div class="resume">
+
+    <!-- NAME -->
+    <div class="r-name">Arnav Tiwari</div>
+
+    <!-- CONTACT -->
+    <div class="r-contact">
+      <a href="mailto:arnavt292@gmail.com">arnavt292@gmail.com</a><span class="sep">|</span>8329846328<span class="sep">|</span><a href="https://linkedin.com/in/arnav-tiwari" target="_blank">LinkedIn</a><span class="sep">|</span><a href="https://github.com/arnavt" target="_blank">GitHub</a><span class="sep">|</span><a href="#" target="_blank">Portfolio</a>
+    </div>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="r-section">
+      <div class="r-section-title">Professional Summary</div>
+      <div class="summary-body">
+        Full-Stack Software Engineer with hands-on experience building AI-powered platforms, industrial automation systems, and security dashboards. Delivered measurable impact at Hitachi India (54% reduction in hazardous incidents, 80% faster document workflows) and Payatu Security (50% faster page loads, 40% backend improvement). Specializes in multi-agent LLM orchestration, RESTful API design, and React/Next.js frontends backed by PostgreSQL and MongoDB.
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="r-section">
+      <div class="r-section-title">Education</div>
+      <div class="edu-block">
+        <div class="two-col">
+          <span class="bold">Indian Institute of Information Technology Nagpur (IIIT Nagpur)</span>
+          <span class="date">November 2022 – July 2026</span>
+        </div>
+        <div class="italic">BTech in Computer Science Engineering | CGPA: 7.52/10</div>
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="r-section">
+      <div class="r-section-title">Technical Skills</div>
+      <div class="skills-list">
+        <div class="skill-row"><span class="skill-label">Languages:</span><span>C, C++, Java, Python, JavaScript, TypeScript</span></div>
+        <div class="skill-row"><span class="skill-label">Frontend:</span><span>React.js, Next.js, Redux, Tailwind CSS</span></div>
+        <div class="skill-row"><span class="skill-label">Backend &amp; APIs:</span><span>Node.js, Express.js, Django, FastAPI, REST, GraphQL, JWT, OAuth 2.0, WebSockets</span></div>
+        <div class="skill-row"><span class="skill-label">Testing:</span><span>Jest, Pytest, Postman</span></div>
+        <div class="skill-row"><span class="skill-label">Gen AI:</span><span>LLM App Dev, RAG, LangChain, LangGraph, Google Gemini API, Prompt Engineering, Multi-agent Orchestration</span></div>
+        <div class="skill-row"><span class="skill-label">DevOps &amp; Tooling:</span><span>Docker, Kubernetes, CI/CD, GitHub Actions, Git, Linux, Bash, Vercel</span></div>
+        <div class="skill-row"><span class="skill-label">CS Fundamentals:</span><span>Data Structures &amp; Algorithms, Operating Systems, DBMS, Computer Networks, OOP</span></div>
+      </div>
+    </div>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="r-section">
+      <div class="r-section-title">Professional Experience</div>
+
+      <div class="entry-block">
+        <div class="two-col">
+          <span class="bold">Software Developer Intern</span>
+          <span class="date">July 2025 – Present</span>
+        </div>
+        <div class="entry-sub italic">Hitachi India Pvt Ltd. | Nagpur, Maharashtra</div>
+        <ul class="blist">
+          <li>Engineered SLD visualization modules for steel plant electrical layouts, enabling real-time monitoring of motors and critical equipment — directly contributing to a <strong>33% reduction in motor failures</strong> and <strong>54% reduction in hazardous incidents</strong>.</li>
+          <li>Ported Hitachi applications to IntervalZero RTX64 RTOS, eliminating Windows OS dependency and enabling deterministic task scheduling and dynamic memory allocation — improving system efficiency by <strong>43%</strong> and reducing task allocation time by <strong>76%</strong>.</li>
+          <li>Built React + Django interfaces for 5 HICADS systems (DPS, RCTMS, PTMS, TTMS, ICQIS), digitalizing manual electrical and steel equipment analysis workflows, reducing operator time consumption by <strong>57%</strong> and improving work efficiency by <strong>43%</strong>.</li>
+          <li>Automated CRS document generation pipeline using n8n, reducing turnaround from 2 weeks to 2 days (<strong>80% faster</strong>) and enabling delivery of 7–10 project documents weekly that previously took a month.</li>
+        </ul>
+      </div>
+
+      <div class="entry-block" style="margin-top:8px;">
+        <div class="two-col">
+          <span class="bold">Full Stack Developer Intern</span>
+          <span class="date">May 2025 – July 2025</span>
+        </div>
+        <div class="two-col entry-sub italic">
+          <span>Payatu Security Consulting Pvt. Ltd. | Pune, Maharashtra</span>
+          <a href="#" style="color:#000; font-style:normal; font-size:11.5pt; white-space:nowrap; flex-shrink:0;">Certificate</a>
+        </div>
+        <ul class="blist">
+          <li>Built responsive Next.js + SCSS interfaces reducing page load time from 3s to 1.5s (<strong>50% faster</strong>), improving UI maintainability and user experience.</li>
+          <li>Developed 15 REST API endpoints and optimized 8 using indexing, query optimization, and caching on a MySQL-backed Node.js backend, improving response time by <strong>40%</strong>.</li>
+          <li>Built a real-time logger handling <strong>1,000+ log events/minute</strong> for a 4-role RBAC (Admin, System Engineer, Technician, Employee) WiFi admin dashboard managing 1,000+ users.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="r-section">
+      <div class="r-section-title">Projects</div>
+
+      <div class="entry-block">
+        <div class="two-col">
+          <span class="bold">SkillBridge – AI Adaptive Onboarding Engine</span>
+          <span style="font-size:11.5pt; white-space:nowrap; flex-shrink:0;">
+            <a href="#" target="_blank" style="color:#000;">Link</a> | <a href="#" target="_blank" style="color:#000;">GitHub</a>
+          </span>
+        </div>
+        <div class="entry-sub italic">React, FastAPI, Python, FAISS, spaCy, Sentence-Transformers, NetworkX, Docker, SQLAlchemy</div>
+        <ul class="blist">
+          <li>Built an AI-driven skill gap analyzer processing resumes against job descriptions using a 3-layer matching pipeline (exact match, skill family, cosine similarity via FAISS) trained on 2,484 resumes and 2,277 JDs achieving skill extraction <strong>F1 &gt; 0.82</strong> and gap detection <strong>recall &gt; 85%</strong>.</li>
+          <li>Designed an original Weighted Graph Traversal (WGT) algorithm with Kahn's topological sort for prerequisite-aware learning pathway generation across a 71-skill taxonomy and 58-module curated course catalog.</li>
+          <li>Delivered full-stack solution with React DAG visualization (react-flow), real-time 6-stage processing pipeline, LLM reasoning traces, and Docker deployment – generating personalized roadmaps in under 100 seconds.</li>
+        </ul>
+      </div>
+
+      <div class="entry-block" style="margin-top:8px;">
+        <div class="two-col">
+          <span class="bold">Autopilot – AI Powered Project Planning Platform</span>
+          <span style="font-size:11.5pt; white-space:nowrap; flex-shrink:0;">
+            <a href="#" target="_blank" style="color:#000;">Demo</a> | <a href="#" target="_blank" style="color:#000;">GitHub</a>
+          </span>
+        </div>
+        <div class="entry-sub italic">Next.js, TypeScript, TailwindCSS, Express.js, PostgreSQL, Google Gemini, Groq SDK, OAuth 2.0</div>
+        <ul class="blist">
+          <li>Architected a decoupled, multi-agent AI system with 4 specialized parallel agents (Gemini, Groq SDK) reducing project plan generation from 10–15 minutes to under 3 minutes (<strong>83% faster</strong>) vs manual multi-prompt workflows.</li>
+          <li>Designed a RESTful API layer with 18 endpoints orchestrating agent coordination and returning structured execution plans with confidence scores, cost estimations, and task breakdowns.</li>
+          <li>Delivered OAuth 2.0 (Google + GitHub) auth, PostgreSQL integration, multi-format export (PDF, DOCX, JSON), i18n, and WCAG-compliant dark-mode UI.</li>
+        </ul>
+      </div>
+
+      <div class="entry-block" style="margin-top:8px;">
+        <div class="two-col">
+          <span class="bold">AI-Powered Content Generator Platform</span>
+          <span style="font-size:11.5pt; white-space:nowrap; flex-shrink:0;">
+            <a href="#" target="_blank" style="color:#000;">Demo</a> | <a href="#" target="_blank" style="color:#000;">GitHub</a>
+          </span>
+        </div>
+        <div class="entry-sub italic">Next.js, Clerk, Drizzle ORM, PostgreSQL, Tailwind CSS, TypeScript, Razorpay, Google Gemini API</div>
+        <ul class="blist">
+          <li>Engineered a scalable LLM-powered SaaS platform with 18 dynamic content templates spanning blog posts, ad copy, social media, and SEO content, reducing content creation time by <strong>70%</strong> vs manual workflows.</li>
+          <li>Built PostgreSQL backend with Drizzle ORM featuring schema-level data integrity, query optimization, and full CRUD support for AI generation history and user data.</li>
+          <li>Implemented end-to-end authentication via Clerk with usage-based credit tracking, and Razorpay subscription billing with webhook handling for automated plan management.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ACHIEVEMENTS -->
+    <div class="r-section">
+      <div class="r-section-title">Achievements</div>
+      <ul class="ach-list">
+        <li>Rated <strong>5&#9733;</strong> (rating 2029) on CodeChef, ranking among top competitive programmers globally.</li>
+        <li><strong>1st Runner Up</strong> – ArtPark Codeforge Hackathon (Unstop) – competed against teams across India in a software development challenge.</li>
+        <li>Achieved <strong>97.6 percentile (AIR 22,007)</strong> in JEE Mains 2022 among 1.1M+ candidates.</li>
+      </ul>
+    </div>
+
+  </div>
+
+</body>
+</html>
