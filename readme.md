@@ -73,21 +73,8 @@
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-
-![Arnav's GitHub Stats](https://github-readme-stats.vercel.app/api?username=Arnav10090&show_icons=true&theme=tokyonight&hide_border=true&count_private=true)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Arnav10090&layout=compact&theme=tokyonight&hide_border=true)
-
-</div>
-
----
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:1a56db&height=100&section=footer" />
-
-<sub>⭐ If you found this helpful, consider starring the repo!</sub>
 
 </div>
